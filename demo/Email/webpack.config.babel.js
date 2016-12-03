@@ -1,6 +1,6 @@
 export default {
   output: {
-    filename: 'index.js',
+    filename: 'bundle.js',
   },
   devtool: 'source-map',
   module: {
