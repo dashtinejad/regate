@@ -1,11 +1,12 @@
 {
   "name": "regate",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "React components for building form inputs",
   "repository": "https://github.com/dashtinejad/regate",
-  "main": "index.js",
+  "main": "./distrubution/index.js",
   "scripts": {
     "start": "gulp",
+    "build": "babel src --out-dir distrubution",
     "test": "jest"
   },
   "author": "Mojtaba Dashtinejad <mojtaba@gmail.com>",
@@ -16,6 +17,7 @@
     "react-dom": "^15.3.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-jest": "^17.0.2",
     "babel-loader": "^6.2.7",

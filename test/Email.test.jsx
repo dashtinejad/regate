@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { RegateEmail } from '../src/index'
+import { RegateEmail } from '../distrubution/index.js'
 import {shallow} from 'enzyme'
 
 test('No Value', () => {
