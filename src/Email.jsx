@@ -25,10 +25,10 @@ export class RegateEmail extends React.Component {
   }
 
   render() {
-    return <input type = "email"
+    return <input type="email"
       {...this.props }
-      value = { this.state.value }
-      onChange = { this.onChange }
+      value={ this.state.value }
+      onChange={ this.onChange }
     />
   }
 }
