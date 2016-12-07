@@ -29,7 +29,10 @@ var RegateEmail = exports.RegateEmail = function (_React$Component) {
     get: function get() {
       return {
         value: '',
-        onChange: function onChange(value) {}
+        onChange: function onChange(value) {},
+        readOnly: false,
+        disabled: false,
+        required: false
       };
     }
   }]);

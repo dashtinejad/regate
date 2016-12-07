@@ -4,7 +4,10 @@ export class RegateEmail extends React.Component {
   static get defaultProps() {
       return {
         value: '',
-        onChange: value => {}
+        onChange: value => {},
+        readOnly: false,
+        disabled: false,
+        required: false,
       }
   }
 
@@ -26,9 +29,9 @@ export class RegateEmail extends React.Component {
 
   render() {
     return <input type="email"
-      {...this.props }
-      value={ this.state.value }
-      onChange={ this.onChange }
+      {...this.props}
+      value={this.state.value}
+      onChange={this.onChange}
     />
   }
 }
