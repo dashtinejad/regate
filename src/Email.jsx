@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 
 export class RegateEmail extends React.Component {
   static get defaultProps() {
@@ -19,6 +20,18 @@ export class RegateEmail extends React.Component {
     }
 
     this.onChange = this.onChange.bind(this)
+  }
+
+  isValid() {
+    let _isValid = false
+
+    if (! this.props.required) {
+      if (this.props.value === '') {
+        _isValid = true
+      }
+    }
+
+    return _isValid
   }
 
   onChange(e) {

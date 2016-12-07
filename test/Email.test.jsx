@@ -70,3 +70,23 @@ test('Required', () => {
 
   expect(component.props().required).toBe(true)
 })
+
+test('Validation: empty and not required', () => {
+  const component = shallow(
+    <RegateEmail />
+  )
+
+  let _isValid = component.instance().isValid()
+
+  expect(_isValid).toBe(true)
+})
+
+test('Validation: empty and required', () => {
+  const component = shallow(
+    <RegateEmail required={true} />
+  )
+
+  let _isValid = component.instance().isValid()
+
+  expect(_isValid).toBe(false)
+})

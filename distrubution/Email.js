@@ -13,6 +13,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -51,6 +55,19 @@ var RegateEmail = exports.RegateEmail = function (_React$Component) {
   }
 
   _createClass(RegateEmail, [{
+    key: 'isValid',
+    value: function isValid() {
+      var _isValid = false;
+
+      if (!this.props.required) {
+        if (this.props.value === '') {
+          _isValid = true;
+        }
+      }
+
+      return _isValid;
+    }
+  }, {
     key: 'onChange',
     value: function onChange(e) {
       var value = e.target.value;
