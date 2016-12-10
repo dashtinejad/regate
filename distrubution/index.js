@@ -5,6 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.RegateEmail = undefined;
 
-var _Email = require('./Email');
+var _Email = require('./Email/Email');
 
 exports.RegateEmail = _Email.RegateEmail;

@@ -34,7 +34,7 @@ test('Change Value', () => {
 test('Change Value Handler', () => {
   let _globalValue
 
-  const onChange = value => _globalValue = value
+  const onChange = ({value}) => _globalValue = value
 
   const component = shallow(
     <RegateEmail onChange={onChange} />
@@ -72,21 +72,41 @@ test('Required', () => {
 })
 
 test('Validation: empty and not required', () => {
-  const component = shallow(
-    <RegateEmail />
-  )
+  let _isValid
 
-  let _isValid = component.instance().isValid()
+  const onInitialized = ({isValid}) => _isValid = isValid
+
+  const component = shallow(
+    <RegateEmail onInitialized={onInitialized} />
+  )
 
   expect(_isValid).toBe(true)
 })
 
 test('Validation: empty and required', () => {
+  let _isValid
+
+  const onInitialized = ({isValid}) => _isValid = isValid
+
   const component = shallow(
-    <RegateEmail required={true} />
+    <RegateEmail onInitialized={onInitialized} required={true} />
   )
 
-  let _isValid = component.instance().isValid()
+  expect(_isValid).toBe(false)
+})
+
+test('Validation: change value', () => {
+  let _isValid
+
+  const onChange = ({isValid}) => _isValid = isValid
+
+  const component = shallow(
+    <RegateEmail onChange={onChange} />
+  )
+
+  component.simulate('change', {
+    target: { value: 'mojtaba' }
+  })
 
   expect(_isValid).toBe(false)
 })

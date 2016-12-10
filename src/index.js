@@ -1,4 +1,4 @@
-import { RegateEmail } from './Email'
+import { RegateEmail } from './Email/Email'
 
 export {
   RegateEmail,
