@@ -4,6 +4,16 @@ import React from 'react'
  * RegateEmail Component
  * December 2016
  */
+
+// the CurrentFieldValue type
+// which will be passed to `onInitialized` and `onChange` callbacks
+class CurrentFieldValue {
+  constructor({value, isValid}) {
+    this.value = value
+    this.isValid = isValid
+  }
+}
+
 export class RegateEmail extends React.Component {
   // All available properties which can be passed to the Component
   // All these properties are optional and can be omitted
@@ -61,10 +71,12 @@ export class RegateEmail extends React.Component {
     }
 
     // we should call the onInitialized callback at the beginning
-    this.props.onInitialized({
-      value: this.state.value,
-      isValid: this._isValid()
-    })
+    this.props.onInitialized(
+      new CurrentFieldValue({
+        value: this.state.value,
+        isValid: this._isValid()
+      })
+    )
 
     // binding `this` to needed methods
     this.onChange = this.onChange.bind(this)
@@ -95,10 +107,12 @@ export class RegateEmail extends React.Component {
   onChange(e) {
     const value = e.target.value
     this.setState({ value }, () => {
-      this.props.onChange({
-        value,
-        isValid: this._isValid()
-      })
+      this.props.onChange(
+        new CurrentFieldValue({
+          value,
+          isValid: this._isValid()
+        })
+      )
     })
   }
 

@@ -15,16 +15,29 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
  * RegateEmail Component
  * December 2016
  */
+
+// the CurrentFieldValue type
+// which will be passed to `onInitialized` and `onChange` callbacks
+var CurrentFieldValue = function CurrentFieldValue(_ref) {
+  var value = _ref.value,
+      isValid = _ref.isValid;
+
+  _classCallCheck(this, CurrentFieldValue);
+
+  this.value = value;
+  this.isValid = isValid;
+};
+
 var RegateEmail = exports.RegateEmail = function (_React$Component) {
   _inherits(RegateEmail, _React$Component);
 
@@ -90,10 +103,10 @@ var RegateEmail = exports.RegateEmail = function (_React$Component) {
     };
 
     // we should call the onInitialized callback at the beginning
-    _this.props.onInitialized({
+    _this.props.onInitialized(new CurrentFieldValue({
       value: _this.state.value,
       isValid: _this._isValid()
-    });
+    }));
 
     // binding `this` to needed methods
     _this.onChange = _this.onChange.bind(_this);
@@ -134,10 +147,10 @@ var RegateEmail = exports.RegateEmail = function (_React$Component) {
 
       var value = e.target.value;
       this.setState({ value: value }, function () {
-        _this2.props.onChange({
+        _this2.props.onChange(new CurrentFieldValue({
           value: value,
           isValid: _this2._isValid()
-        });
+        }));
       });
     }
 
