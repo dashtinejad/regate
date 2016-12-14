@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { RegateEmail } from '../distrubution/index.js'
-import { shallow, mount } from 'enzyme'
+import { shallow } from 'enzyme'
 
 test('No Value', () => {
   const component = shallow(
