@@ -25,7 +25,9 @@ gem 'sanitize', '~>2.0'
 gem 'redcarpet'
 
 # Syntax highlighting
-gem 'pygments.rb'
+# gem 'pygments.rb'
+
+gem 'github-pages'
 
 # Avoid having to poll for changes on Windows
 gem 'wdm', '~> 0.1.0' if Gem.win_platform?
