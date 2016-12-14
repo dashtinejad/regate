@@ -1,0 +1,12 @@
+#hero {
+  .jumbotron {
+    background: $teal;
+    color: white;
+    border-radius: 0;
+  }
+
+  .lead {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+}
