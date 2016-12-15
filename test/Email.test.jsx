@@ -95,18 +95,26 @@ test('Validation: empty and required', () => {
   expect(_isValid).toBe(false)
 })
 
-test('Validation: change value', () => {
+test('Validation: false value', () => {
   let _isValid
 
-  const onChange = ({isValid}) => _isValid = isValid
+  const onInitialized = ({isValid}) => _isValid = isValid
 
   const component = shallow(
-    <RegateEmail onChange={onChange} />
+    <RegateEmail value="mojtaba" onInitialized={onInitialized} />
   )
 
-  component.simulate('change', {
-    target: { value: 'mojtaba' }
-  })
-
   expect(_isValid).toBe(false)
+})
+
+test('Validation: true value', () => {
+  let _isValid
+
+  const onInitialized = ({isValid}) => _isValid = isValid
+
+  const component = shallow(
+    <RegateEmail value="mojtaba@gmail.com" onInitialized={onInitialized} />
+  )
+
+  expect(_isValid).toBe(true)
 })

@@ -13,6 +13,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _validator = require('validator');
+
+var _validator2 = _interopRequireDefault(_validator);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -126,9 +130,13 @@ var RegateEmail = exports.RegateEmail = function (_React$Component) {
       var _isValid = false;
 
       if (!this.props.required) {
-        if (this.state.value === '') {
+        if (_validator2.default.isEmpty(this.state.value)) {
           _isValid = true;
+        } else {
+          _isValid = _validator2.default.isEmail(this.state.value);
         }
+      } else {
+        _isValid = _validator2.default.isEmail(this.state.value);
       }
 
       return _isValid;

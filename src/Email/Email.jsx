@@ -1,5 +1,7 @@
 import React from 'react'
 
+import validator from 'validator'
+
 /**
  * RegateEmail Component
  * December 2016
@@ -91,9 +93,17 @@ export class RegateEmail extends React.Component {
     let _isValid = false
 
     if (! this.props.required) {
-      if (this.state.value === '') {
+      if (validator.isEmpty(this.state.value)) {
         _isValid = true
       }
+
+      else {
+        _isValid = validator.isEmail(this.state.value)
+      }
+    }
+
+    else {
+      _isValid = validator.isEmail(this.state.value)
     }
 
     return _isValid
