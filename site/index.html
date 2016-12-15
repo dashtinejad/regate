@@ -80,6 +80,28 @@ title: Regate · React components for building form inputs
         <a href="./docs/">components</a>
         as your need.
       </div>
+      
+      <div class="text-xs-left" style="margin-top: 15px;">
+        <pre><code>$ npm install regate --save</code></pre>
+        <pre><code class="javascript">import React from 'react'
+import ReactDOM from 'react-dom'
+
+import { RegateEmail } from 'regate'
+
+class App extends React.Component {
+  onEmailChange({value, isValid}) {
+    console.log(value, isValid);
+  }
+
+  render() {
+    return (
+      &lt;RegateEmail onChange={this.onEmailChange} /&gt;
+    )
+  }
+}
+</code></pre>
+      </div>
+
     </div>
   </div>
 </div>
