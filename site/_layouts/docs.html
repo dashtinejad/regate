@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<script>
+  $('#navbar [data-path="docs"]').addClass('active')
+</script>
+
+<div style="padding: 50px 0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        {{ content }}
+      </div>
+      <div class="col-md-3">
+        {% include docs-nav.html %}
+      </div>
+    </div>
+  </div>
+</div>

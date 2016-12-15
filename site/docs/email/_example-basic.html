@@ -1,0 +1,23 @@
+<div class="regate-example-container">
+  <div class="regate-example">
+    <input type="email" />
+  </div>
+  <div class="regate-code">
+    <pre><code class="javascript">import React from 'react'
+import ReactDOM from 'react-dom'
+import { RegateEmail } from 'regate'
+
+class App extends React.Component {
+  onEmailChange({value, isValid}) {
+    console.log(value, isValid);
+  }
+
+  render() {
+    return (
+      &lt;RegateEmail onChange={this.onEmailChange} /&gt;
+    )
+  }
+}
+</code></pre>
+  </div>
+</div>

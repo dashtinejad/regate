@@ -1,0 +1,24 @@
+.regate-example-container {
+  $background: #f7f7f9;
+
+  margin: 25px 0;
+
+  .regate-example {
+    border: .2rem solid $background;
+    padding: 15px 20px;
+  }
+
+  .regate-code {
+    background: $background;
+
+    pre {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      
+      code {
+        padding: 15px 20px;
+        background: transparent;
+      }
+    }
+  }
+} 
