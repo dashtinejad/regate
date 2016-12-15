@@ -1,10 +1,10 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <title>Regate · React components for building form inputs</title>
-  <link rel="stylesheet" href="https://dashtinejad.github.io/regate/lib/bootstrap-4.0.0-alpha.5-dist/css/bootstrap-flex.min.css" />
-  <link rel="stylesheet" href="https://dashtinejad.github.io/regate/css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <meta name="description" content="React components for building form inputs" />
   <meta name="keywords" content="react, components, form, input" />
@@ -23,6 +23,15 @@
   <link rel="shortcut icon" href="https://dashtinejad.github.io/regate/favicons/favicon.ico">
   <meta name="msapplication-config" content="https://dashtinejad.github.io/regate/favicons/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://dashtinejad.github.io/regate/lib/font-awesome-4.7.0/css/font-awesome.min.css" />
+  <script src="https://dashtinejad.github.io/regate/lib/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+  <link rel="stylesheet" href="https://dashtinejad.github.io/regate/lib/bootstrap-4.0.0-alpha.5-dist/css/bootstrap-flex.min.css" />
+  <link rel="stylesheet" href="https://dashtinejad.github.io/regate/css/styles.css">
+
+  <link rel="stylesheet" href="https://dashtinejad.github.io/regate/lib/highlight.js-9.9.0/build/styles/atom-one-light.min.css">
+  <script src="https://dashtinejad.github.io/regate/lib/highlight.js-9.9.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
 
@@ -33,22 +42,29 @@
     Regate
   </a>
   <ul class="nav navbar-nav float-xs-right">
-    <li class="nav-item">
+    <li class="nav-item" data-path="home">
       <a class="nav-link" href="https://dashtinejad.github.io/regate/">Home</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="https://dashtinejad.github.io/regate/download/">Download</a>
+    <li class="nav-item" data-path="start">
+      <a class="nav-link" href="https://dashtinejad.github.io/regate/start/">Start</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" data-path="docs">
       <a class="nav-link" href="https://dashtinejad.github.io/regate/docs/">Docs</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="https://github.com/dashtinejad/regate" target="_blank">GitHub</a>
+      <a class="nav-link" href="https://github.com/dashtinejad/regate">GitHub</a>
+    </li>
+    <li class="nav-item">
+      <a href="https://github.com/dashtinejad/regate/releases" class="btn btn-outline-success">v1.0.0</a>
     </li>
   </ul>
 </nav>
 
-  <div id="hero">
+  <script>
+  $('#navbar [data-path="home"]').addClass('active')
+</script>
+
+<div id="hero">
   <div class="jumbotron">
     <div class="container">
       <p class="text-xs-center">
@@ -57,28 +73,118 @@
       <h1 class="display-1 text-xs-center">Regate</h1>
       <p class="display-4 lead text-xs-center">React components for building form inputs</p>
       <p class="text-xs-center">
-        <a class="btn btn-success btn-lg" href="https://dashtinejad.github.io/regate/download/" role="button">Download</a>
+        <a class="btn btn-success btn-lg" href="https://dashtinejad.github.io/regate/start/" role="button">Start</a>
         <a class="btn btn-success btn-lg" href="https://dashtinejad.github.io/regate/docs/" role="button">Documentation</a>
       </p>
     </div>
   </div>
 </div>
 
-
-
 <div class="container">
   <div class="row">
-    <div class="col-md">
-      <h3 class="text-xs-center">Variety</h3>
+    <div class="col-md text-xs-center">
+      <div class="display-3">
+        <i class="fa fa-list fa-fw"></i>
+      </div>
+      <h3 class="display-4">Variety</h3>
+      <div>
+        Regate ships with various components.
+        Just browse the
+        <a href="./docs/">documentation</a>
+        and find the component which you need. See examples and implement
+        it inside your own project.
+      </div>
     </div>
-    <div class="col-md">
-      <h3 class="text-xs-center">Friendly</h3>
+    <div class="col-md text-xs-center">
+      <div class="display-3">
+        <i class="fa fa-user fa-fw"></i>
+      </div>
+      <h3 class="display-4">Friendly</h3>
+      <div>
+        Regate is framekwork friendly. So you can style it easily
+        with UI frameworks like
+        <a href="http://getbootstrap.com/">Bootstrap</a>
+        and also use a state manager like
+        <a href="http://redux.js.org/">Redux</a>.
+      </div>
     </div>
-    <div class="col-md">
-      <h3 class="text-xs-center">Simple</h3>
+    <div class="col-md text-xs-center">
+      <div class="display-3">
+        <i class="fa fa-file fa-fw"></i>
+      </div>
+      <h3 class="display-4">Simple</h3>
+      <div>
+        Regate philosophy is simplicity. This is on both
+        developing the core itself, or the usage of library.
+        There is no difficult learning curve to use Regate.
+        <a href="./docs/">Documentation</a>
+        is as simple as possible with lot of examples.
+      </div>
     </div>
   </div>
 </div>
+
+<hr>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs text-xs-center">
+      <div class="display-3">Easy to get started</div>
+      
+      <div>
+        Starting with Regate is easy and quick. Just install it, and use the
+        <a href="./docs/">components</a>
+        as your need.
+      </div>
+      
+      <div class="text-xs-left" style="margin-top: 15px;">
+        <pre><code>$ npm install regate --save</code></pre>
+        <pre><code class="javascript">import React from 'react'
+import ReactDOM from 'react-dom'
+
+import { RegateEmail } from 'regate'
+
+class App extends React.Component {
+  onEmailChange({value, isValid}) {
+    console.log(value, isValid);
+  }
+
+  render() {
+    return (
+      &lt;RegateEmail onChange={this.onEmailChange} /&gt;
+    )
+  }
+}
+</code></pre>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  <footer id="footer">
+  <hr>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg text-xs-center text-lg-left">
+        © 2016 - 2017
+      </div>
+      <div class="col-lg text-xs-center text-lg-right">
+
+        <a href="https://dashtinejad.github.io/regate/">Home</a>
+        ·
+        <a href="https://dashtinejad.github.io/regate/start/">Start</a>
+        ·
+        <a href="https://dashtinejad.github.io/regate/docs/">Docs</a>
+        ·
+        <a href="https://github.com/dashtinejad/regate">GitHub</a>
+        ·
+        <a href="https://github.com/dashtinejad/regate/releases">v1.0.0</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

@@ -1,10 +1,10 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <title>Documentation · Regate</title>
-  <link rel="stylesheet" href="https://dashtinejad.github.io/regate/lib/bootstrap-4.0.0-alpha.5-dist/css/bootstrap-flex.min.css" />
-  <link rel="stylesheet" href="https://dashtinejad.github.io/regate/css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <meta name="description" content="React components for building form inputs" />
   <meta name="keywords" content="react, components, form, input" />
@@ -23,6 +23,15 @@
   <link rel="shortcut icon" href="https://dashtinejad.github.io/regate/favicons/favicon.ico">
   <meta name="msapplication-config" content="https://dashtinejad.github.io/regate/favicons/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://dashtinejad.github.io/regate/lib/font-awesome-4.7.0/css/font-awesome.min.css" />
+  <script src="https://dashtinejad.github.io/regate/lib/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+  <link rel="stylesheet" href="https://dashtinejad.github.io/regate/lib/bootstrap-4.0.0-alpha.5-dist/css/bootstrap-flex.min.css" />
+  <link rel="stylesheet" href="https://dashtinejad.github.io/regate/css/styles.css">
+
+  <link rel="stylesheet" href="https://dashtinejad.github.io/regate/lib/highlight.js-9.9.0/build/styles/atom-one-light.min.css">
+  <script src="https://dashtinejad.github.io/regate/lib/highlight.js-9.9.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
 
@@ -33,23 +42,53 @@
     Regate
   </a>
   <ul class="nav navbar-nav float-xs-right">
-    <li class="nav-item">
+    <li class="nav-item" data-path="home">
       <a class="nav-link" href="https://dashtinejad.github.io/regate/">Home</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="https://dashtinejad.github.io/regate/download/">Download</a>
+    <li class="nav-item" data-path="start">
+      <a class="nav-link" href="https://dashtinejad.github.io/regate/start/">Start</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" data-path="docs">
       <a class="nav-link" href="https://dashtinejad.github.io/regate/docs/">Docs</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="https://github.com/dashtinejad/regate" target="_blank">GitHub</a>
+      <a class="nav-link" href="https://github.com/dashtinejad/regate">GitHub</a>
+    </li>
+    <li class="nav-item">
+      <a href="https://github.com/dashtinejad/regate/releases" class="btn btn-outline-success">v1.0.0</a>
     </li>
   </ul>
 </nav>
 
-  <h1>Documentation</h1>
+  <script>
+  $('#navbar [data-path="docs"]').addClass('active')
+</script>
 
+<h1>Documentation</h1>
+
+  <footer id="footer">
+  <hr>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg text-xs-center text-lg-left">
+        © 2016 - 2017
+      </div>
+      <div class="col-lg text-xs-center text-lg-right">
+
+        <a href="https://dashtinejad.github.io/regate/">Home</a>
+        ·
+        <a href="https://dashtinejad.github.io/regate/start/">Start</a>
+        ·
+        <a href="https://dashtinejad.github.io/regate/docs/">Docs</a>
+        ·
+        <a href="https://github.com/dashtinejad/regate">GitHub</a>
+        ·
+        <a href="https://github.com/dashtinejad/regate/releases">v1.0.0</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
