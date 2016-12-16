@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Regate · React components for building form inputs</title>
+  <title>RegateEmail · Documentation · Regate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
@@ -60,109 +60,177 @@
   </ul>
 </nav>
 
-  <script>
-  $('#navbar [data-path="home"]').addClass('active')
+  <script src="https://dashtinejad.github.io/regate/lib/babel-browser/babel-browser-5.8.38.min.js"></script>
+<script src="https://dashtinejad.github.io/regate/lib/react/react-15.3.2.js"></script>
+<script src="https://dashtinejad.github.io/regate/lib/react/react-dom-15.3.2.js"></script>
+<script src="https://dashtinejad.github.io/regate/lib/regate/regate-1.0.0.js"></script>
+
+<script>
+  window.konsoleClear = container => {
+    let $terminal = $('#' + container)
+    $terminal.html('')
+  }
+
+  window.konsoleGroup = (container, groupName) => {
+    let $terminal = $('#' + container)
+    $terminal.append('<style>#' + container + ':before { content: "OUTPUT ' + groupName + '"; }</style>');
+  }
+
+  window.konsole = (container, type, title, value) => {
+    let $terminal = $('#' + container)
+    let $pre = $('<pre></pre>')
+
+    if (type.trim() === 'boolean') {
+      value = value ? 'true' : 'false'
+    }
+
+    $('<code></code>')
+      .attr('data-type', 'title')
+      .text(title)
+      .appendTo($pre)
+
+    $('<code></code>')
+      .attr('data-type', type.trim())
+      .text(type)
+      .appendTo($pre)
+
+
+    $('<code></code>')
+      .attr('data-type', 'value')
+      .text(value)
+      .appendTo($pre)
+
+    $pre.appendTo($terminal)
+  }
 </script>
 
-<div id="hero">
-  <div class="jumbotron">
-    <div class="container">
-      <p class="text-xs-center">
-        <img src="https://dashtinejad.github.io/regate/images/regate-logo-transparent.png" alt="Regate" />
-      </p>
-      <h1 class="display-1 text-xs-center">Regate</h1>
-      <p class="display-4 lead text-xs-center">React components for building form inputs</p>
-      <p class="text-xs-center">
-        <a class="btn btn-regate btn-lg" href="https://dashtinejad.github.io/regate/start/" role="button">Start</a>
-        <a class="btn btn-regate btn-lg" href="https://dashtinejad.github.io/regate/docs/" role="button">Documentation</a>
-      </p>
-    </div>
-  </div>
-</div>
+<script>
+  $('#navbar [data-path="docs"]').addClass('active')
+</script>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md text-xs-center">
-      <div class="display-3">
-        <i class="fa fa-list fa-fw"></i>
-      </div>
-      <h3 class="display-4">Variety</h3>
-      <div>
-        Regate ships with various components.
-        Just browse the
-        <a href="./docs/">documentation</a>
-        and find the component which you need. See examples and implement
-        it inside your own project.
-      </div>
-    </div>
-    <div class="col-md text-xs-center">
-      <div class="display-3">
-        <i class="fa fa-user fa-fw"></i>
-      </div>
-      <h3 class="display-4">Friendly</h3>
-      <div>
-        Regate is framekwork friendly. So you can style it easily
-        with UI frameworks like
-        <a href="http://getbootstrap.com/">Bootstrap</a>
-        and also use a state manager like
-        <a href="http://redux.js.org/">Redux</a>.
-      </div>
-    </div>
-    <div class="col-md text-xs-center">
-      <div class="display-3">
-        <i class="fa fa-file fa-fw"></i>
-      </div>
-      <h3 class="display-4">Simple</h3>
-      <div>
-        Regate philosophy is simplicity. This is on both
-        developing the core itself, or the usage of library.
-        There is no difficult learning curve to use Regate.
-        <a href="./docs/">Documentation</a>
-        is as simple as possible with lot of examples.
-      </div>
-    </div>
-  </div>
-</div>
+<div style="padding: 50px 0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <h1>RegateEmail</h1>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs">
-      <hr>
-    </div>
-  </div>
-</div>
+<h2>onChange</h2>
 
+<div class="regate-example-container">
+  <div class="regate-example">
+    <div id="email-example-basic"></div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs text-xs-center">
-      <div class="display-3">Easy to get started</div>
+    <script type="text/babel">
+      {
+        let RegateEmail = Regate.RegateEmail;
       
-      <div>
-        Starting with Regate is easy and quick. Just install it, and use the
-        <a href="./docs/">components</a>
-        as your need.
-      </div>
-      
-      <div class="text-xs-left" style="margin-top: 15px;">
-        <pre><code>$ npm install regate --save</code></pre>
-        <pre><code class="javascript">import React from 'react'
+        class App extends React.Component {
+          onChange({value, isValid}) {
+            konsoleClear('email-example-basic-terminal')
+            konsole('email-example-basic-terminal', ' string', '  value', value);
+            konsole('email-example-basic-terminal', 'boolean', 'isValid', isValid);
+          }
+
+          render() {
+            return (
+              <RegateEmail
+                className="form-control"
+                onChange={this.onChange}
+              />
+            )
+          }
+        }
+
+        ReactDOM.render(<App />, document.getElementById('email-example-basic'))
+      }
+    </script>
+  </div>
+  <div class="regate-code">
+    <pre><code class="javascript">import React from 'react'
+import ReactDOM from 'react-dom'
 import { RegateEmail } from 'regate'
 
 class App extends React.Component {
-  onEmailChange({value, isValid}) {
+  onChange({value, isValid}) {
     console.log(value, isValid);
   }
 
   render() {
     return (
-      &lt;RegateEmail onChange={this.onEmailChange} /&gt;
+      &lt;RegateEmail onChange={this.onChange} /&gt;
     )
   }
 }
-</code></pre>
-      </div>
 
+ReactDOM.render(&lt;App /&gt;, document.getElementById('app'))
+</code></pre>
+  </div>
+
+  <div class="regate-terminal" id="email-example-basic-terminal"></div>
+</div>
+<h2>onInitialized</h2>
+
+<div class="regate-example-container">
+  <div class="regate-example">
+    <div id="email-example-oninitialized"></div>
+
+    <script type="text/babel">
+      {
+        let RegateEmail = Regate.RegateEmail;
+      
+        class App extends React.Component {
+          onInitialized({value, isValid}) {
+            konsoleClear('email-example-oninitialized-terminal')
+            konsole('email-example-oninitialized-terminal', ' string', '  value', value);
+            konsole('email-example-oninitialized-terminal', 'boolean', 'isValid', isValid);
+          }
+
+          render() {
+            return (
+              <RegateEmail
+                value="mojtaba@gmail.com"
+                className="form-control"
+                onInitialized={this.onInitialized}
+              />
+            )
+          }
+        }
+
+        ReactDOM.render(<App />, document.getElementById('email-example-oninitialized'))
+      }
+    </script>
+  </div>
+  <div class="regate-code">
+    <pre><code class="javascript">import React from 'react'
+import ReactDOM from 'react-dom'
+import { RegateEmail } from 'regate'
+
+class App extends React.Component {
+  onInitialized({value, isValid}) {
+    console.log(value, isValid);
+  }
+
+  render() {
+    return (
+      &lt;RegateEmail onChange={this.onInitialized} /&gt;
+    )
+  }
+}
+
+ReactDOM.render(&lt;App /&gt;, document.getElementById('app'))
+</code></pre>
+  </div>
+
+  <div class="regate-terminal" id="email-example-oninitialized-terminal"></div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav" id="docs-nav">
+  <li class="nav-item">
+    <a class="nav-link" href="https://dashtinejad.github.io/regate/docs/email/">Email</a>
+  </li>
+</ul>
+      </div>
     </div>
   </div>
 </div>
