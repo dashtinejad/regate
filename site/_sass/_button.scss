@@ -2,10 +2,23 @@
   $background: #f28870;
   background: $background;
   color: #fff;
-  transition: background-color 150ms ease-in-out;
+  // transition: background-color 150ms ease-in-out;
 
   &:hover {
     color: #fff;
     background: darken($background, 5%);
+  }
+}
+
+.btn-outline-regate {
+  $background: #f28870;
+
+  border: 1px solid $background;
+  color: $background;
+  // transition: all 150ms ease-in-out;
+
+  &:hover {
+    background: $background;
+    color: #fff;
   }
 }
