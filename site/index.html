@@ -17,8 +17,8 @@ title: Regate · React components for building form inputs
       <h1 class="display-1 text-xs-center">Regate</h1>
       <p class="display-4 lead text-xs-center">React components for building form inputs</p>
       <p class="text-xs-center">
-        <a class="btn btn-success btn-lg" href="{{ site.url }}/start/" role="button">Start</a>
-        <a class="btn btn-success btn-lg" href="{{ site.url }}/docs/" role="button">Documentation</a>
+        <a class="btn btn-regate btn-lg" href="{{ site.url }}/start/" role="button">Start</a>
+        <a class="btn btn-regate btn-lg" href="{{ site.url }}/docs/" role="button">Documentation</a>
       </p>
     </div>
   </div>
@@ -68,7 +68,14 @@ title: Regate · React components for building form inputs
   </div>
 </div>
 
-<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-xs">
+      <hr>
+    </div>
+  </div>
+</div>
+
 
 <div class="container">
   <div class="row">
@@ -84,8 +91,6 @@ title: Regate · React components for building form inputs
       <div class="text-xs-left" style="margin-top: 15px;">
         <pre><code>$ npm install regate --save</code></pre>
         <pre><code class="javascript">import React from 'react'
-import ReactDOM from 'react-dom'
-
 import { RegateEmail } from 'regate'
 
 class App extends React.Component {

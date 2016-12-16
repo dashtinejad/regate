@@ -1,0 +1,11 @@
+.btn-regate {
+  $background: #f28870;
+  background: $background;
+  color: #fff;
+  transition: background-color 150ms ease-in-out;
+
+  &:hover {
+    color: #fff;
+    background: darken($background, 5%);
+  }
+}
