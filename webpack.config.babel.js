@@ -1,8 +1,10 @@
 export default {
   output: {
-    filename: 'index.js',
+    filename: 'distrubution/regate.js',
+    library: 'Regate',
+    libraryTarget: 'umd'
   },
-  devtool: 'source-map',
+  // devtool: 'source-map',
   module: {
     loaders: [
       {

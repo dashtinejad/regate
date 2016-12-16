@@ -1,31 +1,32 @@
-<h2>onChange</h2>
+<h2>onInitialized</h2>
 
 <div class="regate-example-container">
   <div class="regate-example">
-    <div id="email-example-basic"></div>
+    <div id="email-example-oninitialized"></div>
 
     <script type="text/babel">
       {
         let RegateEmail = Regate.RegateEmail;
       
         class App extends React.Component {
-          onChange({value, isValid}) {
-            konsoleClear('email-example-basic-terminal')
-            konsole('email-example-basic-terminal', ' string', '  value', value);
-            konsole('email-example-basic-terminal', 'boolean', 'isValid', isValid);
+          onInitialized({value, isValid}) {
+            konsoleClear('email-example-oninitialized-terminal')
+            konsole('email-example-oninitialized-terminal', ' string', '  value', value);
+            konsole('email-example-oninitialized-terminal', 'boolean', 'isValid', isValid);
           }
 
           render() {
             return (
               <RegateEmail
+                value="mojtaba@gmail.com"
                 className="form-control"
-                onChange={this.onChange}
+                onInitialized={this.onInitialized}
               />
             )
           }
         }
 
-        ReactDOM.render(<App />, document.getElementById('email-example-basic'))
+        ReactDOM.render(<App />, document.getElementById('email-example-oninitialized'))
       }
     </script>
   </div>
@@ -35,13 +36,13 @@ import ReactDOM from 'react-dom'
 import { RegateEmail } from 'regate'
 
 class App extends React.Component {
-  onChange({value, isValid}) {
+  onInitialized({value, isValid}) {
     console.log(value, isValid);
   }
 
   render() {
     return (
-      &lt;RegateEmail onChange={this.onChange} /&gt;
+      &lt;RegateEmail onChange={this.onInitialized} /&gt;
     )
   }
 }
@@ -50,5 +51,5 @@ ReactDOM.render(&lt;App /&gt;, document.getElementById('app'))
 </code></pre>
   </div>
 
-  <div class="regate-terminal" id="email-example-basic-terminal"></div>
+  <div class="regate-terminal" id="email-example-oninitialized-terminal"></div>
 </div>

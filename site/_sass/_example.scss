@@ -21,4 +21,41 @@
       }
     }
   }
+
+  .regate-terminal {
+    background: darken($background, 7%);
+    margin-top: -1rem;
+    border-radius: 0;
+    padding: 15px 20px;
+
+    pre {
+      margin: 0;
+    }
+
+    [data-type="string"] { color: maroon; }
+    [data-type="boolean"] { color: purple; }
+    [data-type="number"] { color: blue; }
+
+    [data-type="title"] { color: gray; }
+    [data-type="value"] { color: black; }
+
+    code {
+      display: inline-block;
+    }
+
+    code + code {
+      margin-left: 20px;
+    }
+
+    &:before {
+      opacity: 0.3;
+      font-family: monospace;
+    }
+
+    &:empty {
+      &:before {
+        content: 'OUTPUT';
+      }
+    }
+  }
 } 

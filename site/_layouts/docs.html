@@ -2,6 +2,50 @@
 layout: default
 ---
 
+<script src="{{ site.url }}/lib/babel-browser/babel-browser-5.8.38.min.js"></script>
+<script src="{{ site.url }}/lib/react/react-15.3.2.js"></script>
+<script src="{{ site.url }}/lib/react/react-dom-15.3.2.js"></script>
+<script src="{{ site.url }}/lib/regate/regate-1.0.0.js"></script>
+
+<script>
+  window.konsoleClear = container => {
+    let $terminal = $('#' + container)
+    $terminal.html('')
+  }
+
+  window.konsoleGroup = (container, groupName) => {
+    let $terminal = $('#' + container)
+    $terminal.append('<style>#' + container + ':before { content: "OUTPUT ' + groupName + '"; }</style>');
+  }
+
+  window.konsole = (container, type, title, value) => {
+    let $terminal = $('#' + container)
+    let $pre = $('<pre></pre>')
+
+    if (type.trim() === 'boolean') {
+      value = value ? 'true' : 'false'
+    }
+
+    $('<code></code>')
+      .attr('data-type', 'title')
+      .text(title)
+      .appendTo($pre)
+
+    $('<code></code>')
+      .attr('data-type', type.trim())
+      .text(type)
+      .appendTo($pre)
+
+
+    $('<code></code>')
+      .attr('data-type', 'value')
+      .text(value)
+      .appendTo($pre)
+
+    $pre.appendTo($terminal)
+  }
+</script>
+
 <script>
   $('#navbar [data-path="docs"]').addClass('active')
 </script>
