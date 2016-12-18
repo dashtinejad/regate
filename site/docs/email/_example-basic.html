@@ -30,7 +30,8 @@
     </script>
   </div>
   <div class="regate-code">
-    <pre><code class="javascript">import React from 'react'
+    {% highlight jsx %}
+import React from 'react'
 import ReactDOM from 'react-dom'
 import { RegateEmail } from 'regate'
 
@@ -41,13 +42,13 @@ class App extends React.Component {
 
   render() {
     return (
-      &lt;RegateEmail onChange={this.onChange} /&gt;
+      <RegateEmail onChange={this.onChange} />
     )
   }
 }
 
-ReactDOM.render(&lt;App /&gt;, document.getElementById('app'))
-</code></pre>
+ReactDOM.render(<App />, document.getElementById('app'))
+{% endhighlight %}
   </div>
 
   <div class="regate-terminal" id="email-example-basic-terminal"></div>

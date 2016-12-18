@@ -22,6 +22,10 @@ url: "https://dashtinejad.github.io/regate" # the base hostname & protocol for y
 twitter_username: dashtinejad
 github_username:  dashtinejad
 
+encoding: utf-8
+
+highlighter: rouge
+
 # Build settings
 markdown: kramdown
 gems:
