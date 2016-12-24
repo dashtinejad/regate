@@ -1,0 +1,53 @@
+<h2>Required</h2>
+
+<div class="regate-example-container">
+  <div class="regate-example">
+    <div id="email-example-required"></div>
+
+    <script type="text/babel">
+      {
+        let RegateEmail = Regate.RegateEmail;
+      
+        class App extends React.Component {
+          onChange({value, isValid}) {
+            konsoleClear('email-example-required-terminal')
+            konsole('email-example-required-terminal', ' string', '  value', value);
+            konsole('email-example-required-terminal', 'boolean', 'isValid', isValid);
+          }
+
+          render() {
+            return (
+              <RegateEmail
+                required={true}
+                className="form-control"
+                onChange={this.onChange}
+              />
+            )
+          }
+        }
+
+        ReactDOM.render(<App />, document.getElementById('email-example-required'))
+      }
+    </script>
+  </div>
+  <div class="regate-code">
+{% highlight jsx %}
+import React from 'react'
+import { RegateEmail } from 'regate'
+
+class App extends React.Component {
+  onChange({value, isValid}) {
+    console.log(value, isValid);
+  }
+
+  render() {
+    return (
+      <RegateEmail required={true} onChange={this.onChange} />
+    )
+  }
+}
+{% endhighlight %}
+  </div>
+
+  <div class="regate-terminal" id="email-example-required-terminal"></div>
+</div>

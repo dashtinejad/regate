@@ -1,8 +1,8 @@
-<h2>onInitialized</h2>
+<h2>onInitialized + Required (empty)</h2>
 
 <div class="regate-example-container">
   <div class="regate-example">
-    <div id="email-example-oninitialized"></div>
+    <div id="email-example-oninitialized-required-empty"></div>
 
     <script type="text/babel">
       {
@@ -10,15 +10,16 @@
       
         class App extends React.Component {
           onInitialized({value, isValid}) {
-            konsoleClear('email-example-oninitialized-terminal')
-            konsole('email-example-oninitialized-terminal', ' string', '  value', value);
-            konsole('email-example-oninitialized-terminal', 'boolean', 'isValid', isValid);
+            konsoleClear('email-example-oninitialized-required-empty-terminal')
+            konsole('email-example-oninitialized-required-empty-terminal', ' string', '  value', value);
+            konsole('email-example-oninitialized-required-empty-terminal', 'boolean', 'isValid', isValid);
           }
 
           render() {
             return (
               <RegateEmail
-                value="mojtaba@gmail.com"
+                required={true}
+                value=""
                 className="form-control"
                 onInitialized={this.onInitialized}
               />
@@ -26,7 +27,7 @@
           }
         }
 
-        ReactDOM.render(<App />, document.getElementById('email-example-oninitialized'))
+        ReactDOM.render(<App />, document.getElementById('email-example-oninitialized-required-empty'))
       }
     </script>
   </div>
@@ -42,12 +43,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <RegateEmail onInitialized={this.onInitialized} />
+      <RegateEmail required={true} onInitialized={this.onInitialized} />
     )
   }
 }
 {% endhighlight %}
   </div>
 
-  <div class="regate-terminal" id="email-example-oninitialized-terminal"></div>
+  <div class="regate-terminal" id="email-example-oninitialized-required-empty-terminal"></div>
 </div>
