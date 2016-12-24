@@ -20,7 +20,7 @@ gulp.task('build:commonjs', () =>
 gulp.task('build:umd', () =>
   gulp.src(paths.clientEntryPoint)
     .pipe(webpack(webpackConfig))
-    .pipe(gulp.dest(paths.distDir))
+    .pipe(gulp.dest(''))
 )
 
 gulp.task('build:watcher', () => 

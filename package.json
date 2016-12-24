@@ -1,18 +1,25 @@
 {
   "name": "regate",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "description": "React components for building form inputs",
   "repository": "https://github.com/dashtinejad/regate",
   "main": "./distrubution/index.js",
   "scripts": {
     "start": "gulp",
     "flow": "flow || exit 0",
+    "check": "npm run test",
+    "build": "npm run build:commonjs && npm run build:umd",
     "build:commonjs": "babel src --out-dir distrubution",
     "build:umd": "webpack src/index.js",
+    "prepublish": "npm run check && npm run build",
     "test": "jest"
   },
   "author": "Mojtaba Dashtinejad <mojtaba@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dashtinejad/regate/issues"
+  },
+  "homepage": "https://dashtinejad.github.io/regate/",
   "dependencies": {
     "babel-polyfill": "^6.16.0",
     "react": "^15.3.2",

@@ -14,6 +14,12 @@ $ npm install
 $ npm start
 ```
 
+3. Publish
+
+```
+$ npm publish
+```
+
 
 # Test
 
