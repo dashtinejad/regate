@@ -7,7 +7,7 @@
   "scripts": {
     "start": "gulp",
     "flow": "flow || exit 0",
-    "build": "babel src --out-dir distrubution",
+    "build:commonjs": "babel src --out-dir distrubution",
     "build:umd": "webpack src/index.js",
     "test": "jest"
   },
