@@ -372,6 +372,83 @@ class App extends React.Component {
 
   <div class="regate-terminal" id="email-example-oninitialized-required-empty-terminal"></div>
 </div>
+<h2>Styling</h2>
+
+<div class="regate-example-container">
+  <div class="regate-example">
+    <div id="email-example-styling"></div>
+
+    <script type="text/babel">
+      {
+        let RegateEmail = Regate.RegateEmail
+      
+        class App extends React.Component {
+          constructor(props) {
+            super(props)
+            this.state = { isValid: true, isTouched: false }
+            this.onChange = this.onChange.bind(this)
+          }
+
+          onChange({value, isValid}) {
+            konsoleClear('email-example-styling-terminal')
+            konsole('email-example-styling-terminal', ' string', '  value', value)
+            konsole('email-example-styling-terminal', 'boolean', 'isValid', isValid)
+
+            this.setState({
+              isValid: isValid,
+              isTouched: value === '' ? false : true
+            })
+          }
+
+          render() {
+            let formgroupClasses = ["form-group"]
+            
+            if (! this.state.isTouched) {
+              formgroupClasses.push('has-warning')
+            }
+            else {
+              if (this.state.isValid) {
+                formgroupClasses.push('has-success')
+              }
+              else {
+                formgroupClasses.push('has-danger')
+              }
+            }
+
+            return (
+              <div className={formgroupClasses.join(' ')}>
+                <RegateEmail
+                  className="form-control"
+                  onChange={this.onChange}
+                />
+              </div>
+            )
+          }
+        }
+
+        ReactDOM.render(<App />, document.getElementById('email-example-styling'))
+      }
+    </script>
+  </div>
+  <div class="regate-code">
+<figure class="highlight"><pre><code class="language-jsx" data-lang="jsx">import React from 'react'
+import { RegateEmail } from 'regate'
+
+class App extends React.Component {
+  onChange({value, isValid}) {
+    console.log(value, isValid)
+  }
+
+  render() {
+    return (
+      &lt;RegateEmail onChange={this.onChange} /&gt;
+    )
+  }
+}</code></pre></figure>
+  </div>
+
+  <div class="regate-terminal" id="email-example-styling-terminal"></div>
+</div>
       </div>
       <div class="col-md-3">
         <ul class="nav" id="docs-nav">
