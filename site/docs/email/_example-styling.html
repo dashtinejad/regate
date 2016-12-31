@@ -47,6 +47,10 @@
                   className="form-control"
                   onChange={this.onChange}
                 />
+                
+                {! this.state.isTouched && <div className="form-control-feedback">Please enter your email address</div> }
+                {! this.state.isValid && <div className="form-control-feedback">Your email address is wrong</div> }
+                {this.state.isTouched && this.state.isValid && <div className="form-control-feedback">Thanks for entering your email address</div> }
               </div>
             )
           }
